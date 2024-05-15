@@ -12,6 +12,8 @@ const div_hakutyot2 = $("Hakutyot2")
 const div_valintatyot = $("#valintatyot");
 const div_valintatyot2 = $("#valintatyot2");
 const div_johtajatyot = $("#Johtajatyot");
+const div_kohta1 = $("#kohta1");
+const div_kohta2 = $("#kohta2");
 
 var rakentajaAsiantuntijaTiedotHaettu = false; // Muuttuja seuraamaan, onko rakentaja/asiantuntijan tiedot haettu
 
@@ -21,8 +23,8 @@ $("#Rakentaja_asiantuntija").click(function () {
         console.log('Rakentaja_asiantuntija button clicked');
         const url2 = "https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?alueet=Uusimaa&valitutAmmattialat=3112&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---";
         const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29";
-        haeJaNaytaTyot(url2, div_rakentaja_asiantuntijatyot2);
-        haeAsiantuntija(url, div_rakentaja_asiantuntijatyot);
+        haeJaNaytaTyot(url2, div_kohta2);
+        haeAsiantuntija(url, div_kohta1);
         // Piilotetaan ylimääräiset näppäimet
         $("#Piirtaja").hide()
         $("#Insinoori").hide()
@@ -30,8 +32,8 @@ $("#Rakentaja_asiantuntija").click(function () {
         rakentajaAsiantuntijaTiedotHaettu = true; // Merkitään, että rakentaja/asiantuntijan tiedot on haettu
     } else {
         // Tyhjennetään rakentaja/asiantuntijan tiedot ja näytetään ylimääräiset näppäimet
-        div_rakentaja_asiantuntijatyot.empty();
-        div_rakentaja_asiantuntijatyot2.empty();
+        div_kohta1.empty();
+        div_kohta2.empty();
         $("#Piirtaja").show()
         $("#Insinoori").show()
         $("#Johtaja").show()
@@ -79,8 +81,8 @@ $("#Piirtaja").click(function () {
         const url2 = "https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?alueet=Uusimaa&valitutAmmattialat=3118&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---";
         const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29"
 
-        haeJaNaytaTyot(url2, div_piirtajatyot2);
-        haePiirtaja(url, div_piirtajatyot)
+        haeJaNaytaTyot(url2, div_kohta2);
+        haePiirtaja(url, div_kohta1)
         // Piilotetaan ylimääräiset näppäimet
         $("#Rakentaja_asiantuntija").hide()
         $("#Insinoori").hide()
@@ -88,8 +90,8 @@ $("#Piirtaja").click(function () {
         piirtajaTiedotHaettu = true; // Merkitään, että piirtäjän tiedot on haettu
     } else {
         // Tyhjennetään piirtäjän tiedot ja näytetään ylimääräiset näppäimet
-        div_piirtajatyot.empty();
-        div_piirtajatyot2.empty();
+        div_kohta1.empty();
+        div_kohta2.empty();
         $("#Rakentaja_asiantuntija").show()
         $("#Insinoori").show()
         $("#Johtaja").show()
@@ -136,7 +138,7 @@ $("#Insinoori").click(function ()  {
     if (!insinooriTiedotHaettu) {
         console.log('Button Insinööri clicked');
         const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29"
-        haeInsinoori(url, div_insinoorityot);
+        haeInsinoori(url, div_kohta1);
         // Piilotetaan ylimääräiset näppäimet
         $("#Rakentaja_asiantuntija").hide()
         $("#Piirtaja").hide()
@@ -144,7 +146,8 @@ $("#Insinoori").click(function ()  {
         insinooriTiedotHaettu = true; // Merkitään, että insinöörin tiedot on haettu
     } else {
         // Tyhjennetään insinöörin tiedot ja näytetään ylimääräiset näppäimet
-        div_insinoorityot.empty();
+        div_kohta1.empty();
+        div_kohta2.empty();
         $("#Rakentaja_asiantuntija").show()
         $("#Piirtaja").show()
         $("#Johtaja").show()
@@ -193,7 +196,7 @@ $("#Johtaja").click(function () {
     if (!johtajaTiedotHaettu) {
         console.log('Button Johtaja clicked');
         const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29";
-        haeJohtaja(url, div_johtajatyot);
+        haeJohtaja(url, div_kohta1);
         // Piilotetaan ylimääräiset näppäimet
         $("#Rakentaja_asiantuntija").hide()
         $("#Piirtaja").hide()
@@ -201,7 +204,8 @@ $("#Johtaja").click(function () {
         johtajaTiedotHaettu = true; // Merkitään, että johtajan tiedot on haettu
     } else {
         // Tyhjennetään johtajan tiedot ja näytetään ylimääräiset näppäimet
-        div_johtajatyot.empty();
+        div_kohta1.empty();
+        div_kohta2.empty();
         $("#Rakentaja_asiantuntija").show()
         $("#Piirtaja").show()
         $("#Insinoori").show()
@@ -374,7 +378,7 @@ $("#Rakennusala").click(function () {
 
 //Varmistetaan että kaikki kentät ovat tyhjät ja kaikki näppäimet näkyvissä
 $("#tyhjennäkaikki").click(function () {
-    $("#Rakentaja_asiantuntijatyot").empty();
+/*     $("#Rakentaja_asiantuntijatyot").empty();
     $("#Rakentaja_asiantuntijatyot2").empty();
     $("#Piirtajatyot").empty();
     $("#Piirtajatyot2").empty();
@@ -387,10 +391,13 @@ $("#tyhjennäkaikki").click(function () {
     $("#valintatyot").empty();
     $("#valintatyot2").empty();
     $("#Hakutyot").empty();
-    $("#Hakutyot2").empty();
+    $("#Hakutyot2").empty(); */
+    $("#kohta1").empty();
+    $("#kohta2").empty();
     $("#Piirtaja").show();
     $("#Johtaja").show();    
     $("#Insinoori").show();
     $("#Rakentaja_asiantuntija").show();
     $("#Rakennusala").show();
+
 });
