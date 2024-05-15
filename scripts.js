@@ -376,20 +376,18 @@ $("#Rakennusala").click(function () {
 
 //Varmistetaan että kaikki kentät ovat tyhjät ja kaikki näppäimet näkyvissä
 $("#tyhjennäkaikki").click(function () {
-/*     $("#Rakentaja_asiantuntijatyot").empty();
+ /*    $("#Rakentaja_asiantuntijatyot").empty();
     $("#Rakentaja_asiantuntijatyot2").empty();
     $("#Piirtajatyot").empty();
     $("#Piirtajatyot2").empty();
     $("#Insinoorityot").empty();
-    $("#Johtajatyot").empty();    
+    $("#Johtajatyot").empty();     */
     $("#Rakennusalatyot").empty();
     $("#Rakennusalatyot2").empty();
-    $("#ITtyot").empty();
-    $("#ITtyot2").empty();
     $("#valintatyot").empty();
     $("#valintatyot2").empty();
     $("#Hakutyot").empty();
-    $("#Hakutyot2").empty(); */
+    $("#Hakutyot2").empty();
     $("#kohta1").empty();
     $("#kohta2").empty();
     $("#Piirtaja").show();
