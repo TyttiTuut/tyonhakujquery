@@ -1,17 +1,15 @@
-const div_rakentaja_asiantuntijatyot2 = $("#Rakentaja_asiantuntijatyot2");
-const div_rakentaja_asiantuntijatyot = $("#Rakentaja_asiantuntijatyot")
-const div_piirtajatyot2 = $("#Piirtajatyot2");
+/* const div_rakentaja_asiantuntijatyot2 = $("#Rakentaja_asiantuntijatyot2");
+const div_rakentaja_asiantuntijatyot = $("#Rakentaja_asiantuntijatyot") */
+/* const div_piirtajatyot2 = $("#Piirtajatyot2");
 const div_piirtajatyot = $("#Piirtajatyot");  
-const div_insinoorityot = $("#Insinoorityot");
+const div_insinoorityot = $("#Insinoorityot"); */
+/* const div_johtajatyot = $("#Johtajatyot"); */
 const div_rakennusalatyot = $("#Rakennusalatyot");
 const div_rakennusalatyot2 = $("#Rakennusalatyot2");
-const div_ITtyot = $("#ITtyot");
-const div_ITtyot2 = $("#ITtyot2");
 const div_hakutyot = $("Hakutyot")
 const div_hakutyot2 = $("Hakutyot2")
 const div_valintatyot = $("#valintatyot");
 const div_valintatyot2 = $("#valintatyot2");
-const div_johtajatyot = $("#Johtajatyot");
 const div_kohta1 = $("#kohta1");
 const div_kohta2 = $("#kohta2");
 
