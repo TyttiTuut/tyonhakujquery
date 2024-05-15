@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Työnhaku</title>
+    <link rel="stylesheet" href="../tyonhakujquery/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Työnhaku</h1>
+    <p>Tämä on JavaScript-kurssin harjoitustehtävä API-rajapintoihin ja jQueryyn liittyen.</p>
+    
+    <div id="tarkkahaku">
+    <h2>Työnhaku asiasanoilla</h2>        
+        <input type="button" class="btn btn-info" name="Rakentaja_asiantuntija" id="Rakentaja_asiantuntija" value="Rakentamisen asiantuntija">
+        <input type="button" class="btn btn-info" name="Piirtaja" id="Piirtaja" value="Piirtäjä">
+        <input type="button" class="btn btn-info" name="Insinoori" id="Insinoori" value="Insinööri">
+        <input type="button" class="btn btn-info" name="Johtaja" id="Johtaja" value="Johtaja">    
+        <div id="Rakentaja_asiantuntijatyot"></div>
+        <div id="Rakentaja_asiantuntijatyot2"></div> 
+        <div id="Piirtajatyot"></div>
+        <div id="Piirtajatyot2"></div>   
+        <div id="Insinoorityot"></div>
+        <div id="Johtajatyot"></div>        
+    </div>
+
+    <div id="sanahaku">
+        <h2>Työnhaku vapaalla sanahaulla</h2>
+        <p>Alla voit hakea työpaikkoja vapaalla sanahaulla</p>
+        <label for="textfield">Mitä etsitään?</label> 
+        <input type="button" class="btn btn-info" id="nuoli" value="&#8595; &#8595; &#8595;">
+        <br>
+        <input type="text" name="textfield" id="textfield" title="Syöttökenttä" placeholder="Haku"> 
+        <p id="error-message" style="color: red; display: none;">Syötteen tulee olla vähintään kolme merkkiä pitkä.</p>
+    
+        <div id="Haku">
+            <div id="Hakutyot"></div>  
+            <div id="Hakutyot2"></div>
+        </div>     
+    </div>
+    
+    <div id="alakohtainen">
+        <h2>Alakohtainen haku</h2>
+        <p>Alla voit hakea rakennusalan töitä eri aloilta.</p>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Alakohtainen haku</button>
+        <div id="demo" class="collapse">
+            <div id="valinnat" style="display:block;">
+                <label for="mySelect">Valitse haluttu rakennusala:</label>
+                <select id="mySelect">
+                    <option value="Betonirakennus">Betonirakennus</option>
+                    <option value="Rakennussuunnittelu">Rakennussuunnittelu</option>
+                    <option value="Talonrakennus">Talonrakennus</option>
+                    <option value="Talotekniikka">Talotekniikka</option>
+                    <option value="Tyonjohto">Työnjohto- ja esimiestehtävät</option>
+                    <option value="tyhjennä">Tyhjennä</option>
+                </select>
+            </div>
+            <div id="valintatyot"></div>
+            <div id="valintatyot2"></div>
+        </div>
+      </div>
+    
+    <div id="laajahaku">
+    <h2>Kaikki rakennusalan työt Uusimaalla</h2>
+        <input type="button" class="btn btn-info" name="Rakennusala" id="Rakennusala" value="Rakennusala Uusimaa">
+        <div id="Rakennusalatyot"></div>
+        <div id="Rakennusalatyot2"></div>          
+    </div>
+
+    <input type="button" class="btn btn-info" name="tyhjennäkaikki" id="tyhjennäkaikki" value="Tyhjennä kaikki">
+
+    <script src="../tyonhakujquery/scripts.js"></script>
+</body>
+</html>
+

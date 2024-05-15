@@ -1,0 +1,107 @@
+
+h1, h2 {
+    font-weight: bold; 
+    color: #05445E; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+h1 {
+    font-size: 24px; 
+}
+
+h2 {
+    font-size: 20px; 
+}
+
+#julkaistu {
+    color: #189AB4;
+    font-size: 12px;
+}
+#title {
+    color: #05445E;
+    font-size:18px;
+}
+
+.inline-container {
+    display: flex;
+    align-items: baseline;
+}
+
+#tarkkahaku {
+    border-radius: 10px; 
+    background-color: #D4F1F4; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+
+#sanahaku {
+    border-radius: 10px; 
+    background-color: #75E6DA; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+
+#nuoli {
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: #189AB4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transform: rotate(0deg); /* Alkutila: ei kääntöä */
+    transition: transform 0.3s ease; /* Animointi muutokselle */
+}
+
+#nuoli.rotated {
+    transform: rotate(180deg); /* Käännetään 180 astetta ylöspäin */
+}
+
+#nuoli:hover {
+    color: #333; 
+}
+#alakohtainen {
+    border-radius: 10px; 
+    background-color: #D4F1F4; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+#laajahaku {
+    border-radius: 10px; 
+    background-color: #75E6DA; 
+    padding: 20px; 
+    border: 2px solid #189AB4; 
+}
+
+  [type="button"]:hover {
+    background-color: #05445E;
+  }
+
+  input[type="text"] {
+    background-color: #D4F1F4;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  #mySelect {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #05445E;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 20px; 
+    background-color: #189AB4;
+    color: white; 
+}
+
+
+
+  
+  
