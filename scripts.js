@@ -1,9 +1,4 @@
-/* const div_rakentaja_asiantuntijatyot2 = $("#Rakentaja_asiantuntijatyot2");
-const div_rakentaja_asiantuntijatyot = $("#Rakentaja_asiantuntijatyot") */
-/* const div_piirtajatyot2 = $("#Piirtajatyot2");
-const div_piirtajatyot = $("#Piirtajatyot");  
-const div_insinoorityot = $("#Insinoorityot"); */
-/* const div_johtajatyot = $("#Johtajatyot"); */
+
 const div_rakennusalatyot = $("#Rakennusalatyot");
 const div_rakennusalatyot2 = $("#Rakennusalatyot2");
 const div_hakutyot = $("Hakutyot")
@@ -186,7 +181,6 @@ function haeInsinoori(url, targetDiv) {
     });
 }
 
-
 var johtajaTiedotHaettu = false; // Muuttuja seuraamaan, onko johtajan tiedot haettu
 
 $("#Johtaja").click(function () {
@@ -236,6 +230,7 @@ function haeJohtaja(url, targetDiv) {
                     || description.toLowerCase().includes('paallik') || title.toLowerCase().includes('paallik')    
                     || description.toLowerCase().includes('esihenkilö') || title.toLowerCase().includes('esihenkilö')
                     || description.toLowerCase().includes('esihenkilo') || title.toLowerCase().includes('esihenkilo')          
+                    || description.toLowerCase().includes('esimie') || title.toLowerCase().includes('esimie')
                 ) {
                     // Lisätään otsikko ja linkki HTML-div-elementtiin
                     targetDiv.append(`<div class="inline-container"><p id="title"> ${title}</p>&nbsp;&nbsp;<p id="julkaistu"> (julkaistu: ${formattedDate})</p></div><p><a href="${link}" target="_blank">${link}</a></p>`);
@@ -246,21 +241,6 @@ function haeJohtaja(url, targetDiv) {
     });
 }
 
-$("#textfield").on("input", function() {
-    var inputField = $(this);
-    var errorMessage = $("#error-message");
-    var inputValue = inputField.val().trim(); // Poistetaan ylimääräiset välilyönnit
-
-    if (inputValue.length < 3) {
-        // Näytetään virheilmoitus ja korostetaan kenttä punaisella reunuksella
-        errorMessage.css("display", "block");
-        inputField.css("border-color", "red");
-    } else {
-        // Piilotetaan virheilmoitus ja poistetaan mahdollinen korostus
-        errorMessage.css("display", "none");
-        inputField.css("border-color", ""); // Palautetaan alkuperäinen reunusväri
-    }
-}); 
 
 $(document).ready(function() {
     // Piilotetaan hakukenttä aluksi
@@ -309,26 +289,7 @@ $(document).ready(function() {
     });
 });
 
-function haeJaNaytaTyot(url, targetDiv) {
-    $.ajax({
-        url: url,
-        type: 'GET',
-        dataType: 'xml',
-        success: function (data) {
-            targetDiv.empty();
-            $(data).find('item').each(function () {
-                var title = $(this).find('title').text();
-                var link = $(this).find('link').text();
-                var pubdate = $(this).find('pubDate').text();
 
-                // Muunnetaan päivämäärä haluttuun muotoon
-                var dateObj = new Date(pubdate);
-                var formattedDate = `${dateObj.getDate()}.${dateObj.getMonth() + 1}.${dateObj.getFullYear()}`;
-                targetDiv.append(`<div class="inline-container"><p id="title"> ${title}</p>&nbsp;&nbsp;<p id="julkaistu"> (julkaistu: ${formattedDate})</p></div><p><a href="${link}" target="_blank">${link}</a></p>`);
-            });
-        }
-    });
-}
 
 $("#mySelect").change(function () {
     const selectElement = this;
@@ -374,14 +335,30 @@ $("#Rakennusala").click(function () {
     }
 });
 
+function haeJaNaytaTyot(url, targetDiv) {
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'xml',
+        success: function (data) {
+            targetDiv.empty();
+            $(data).find('item').each(function () {
+                var title = $(this).find('title').text();
+                var link = $(this).find('link').text();
+                var pubdate = $(this).find('pubDate').text();
+
+                // Muunnetaan päivämäärä haluttuun muotoon
+                var dateObj = new Date(pubdate);
+                var formattedDate = `${dateObj.getDate()}.${dateObj.getMonth() + 1}.${dateObj.getFullYear()}`;
+                targetDiv.append(`<div class="inline-container"><p id="title"> ${title}</p>&nbsp;&nbsp;<p id="julkaistu"> (julkaistu: ${formattedDate})</p></div><p><a href="${link}" target="_blank">${link}</a></p>`);
+            });
+        }
+    });
+}
+
 //Varmistetaan että kaikki kentät ovat tyhjät ja kaikki näppäimet näkyvissä
 $("#tyhjennäkaikki").click(function () {
- /*    $("#Rakentaja_asiantuntijatyot").empty();
-    $("#Rakentaja_asiantuntijatyot2").empty();
-    $("#Piirtajatyot").empty();
-    $("#Piirtajatyot2").empty();
-    $("#Insinoorityot").empty();
-    $("#Johtajatyot").empty();     */
+
     $("#Rakennusalatyot").empty();
     $("#Rakennusalatyot2").empty();
     $("#valintatyot").empty();
