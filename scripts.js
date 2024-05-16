@@ -72,7 +72,7 @@ $("#Piirtaja").click(function () {
     if (!piirtajaTiedotHaettu) {
         console.log('Piirtaja button clicked');
         const url2 = "https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?alueet=Uusimaa&valitutAmmattialat=3118&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---";
-        const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29"
+        const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29";
 
         haeJaNaytaTyot(url2, div_kohta2);
         haePiirtaja(url, div_kohta1)
@@ -130,8 +130,10 @@ $("#Insinoori").click(function ()  {
     // Tarkistetaan, onko insinöörin tiedot jo haettu, jos ei niin suoritetaan funktiot ja piilotetaan ylimääräiset näppäimet
     if (!insinooriTiedotHaettu) {
         console.log('Button Insinööri clicked');
-        const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29"
+        const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29";
+        const url2 = "https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?valitutAmmattialat=3112&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---";
         haeInsinoori(url, div_kohta1);
+        haeInsinoori(url2, div_kohta2);
         // Piilotetaan ylimääräiset näppäimet
         $("#Rakentaja_asiantuntija").hide()
         $("#Piirtaja").hide()
