@@ -241,7 +241,6 @@ function haeJohtaja(url, targetDiv) {
     });
 }
 
-
 $(document).ready(function() {
     // Piilotetaan hakukenttä aluksi
     $("#textfield").hide();
@@ -288,8 +287,6 @@ $(document).ready(function() {
         }
     });
 });
-
-
 
 $("#mySelect").change(function () {
     const selectElement = this;
