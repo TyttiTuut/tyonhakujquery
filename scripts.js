@@ -188,7 +188,9 @@ $("#Johtaja").click(function () {
     if (!johtajaTiedotHaettu) {
         console.log('Button Johtaja clicked');
         const url = "https://duunitori.fi/api/v1/jobentries?area=Uusimaa&search=rakennusala+%28ala%29";
+        const url2 = "https://paikat.te-palvelut.fi/tpt-api/v1/tyopaikat.rss?valitutAmmattialat=3112&ilmoitettuPvm=1&vuokrapaikka=---&etatyopaikka=---";
         haeJohtaja(url, div_kohta1);
+        haeJohtaja(url2, div_kohta2);
         // Piilotetaan ylimääräiset näppäimet
         $("#Rakentaja_asiantuntija").hide()
         $("#Piirtaja").hide()
